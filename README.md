@@ -1,4 +1,4 @@
-# YoreselSozluk
+# Yöresel Sözlük
 
 I used these :
 
