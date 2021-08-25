@@ -6,7 +6,8 @@
 
   <ItemGroup>
     <Folder Include="Concrete\" />
-    <Folder Include="Operations\" />
+    <Folder Include="Operations\RegionOperations\DeleteRegion\" />
+    <Folder Include="Operations\RegionOperations\UpdateRegion\" />
   </ItemGroup>
 
   <ItemGroup>

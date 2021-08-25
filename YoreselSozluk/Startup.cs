@@ -11,7 +11,9 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using YoreselSozluk.DataAccess.Abstract;
 using YoreselSozluk.DataAccess.Concrete;
 
 namespace YoreselSozluk
@@ -36,6 +38,10 @@ namespace YoreselSozluk
             });
 
             services.AddDbContext<Context>(option => option.UseMySQL(Configuration["ConnectionStrings:DefaultConnection"]));
+
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+            services.AddScoped<IContext>(provider => provider.GetService<Context>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

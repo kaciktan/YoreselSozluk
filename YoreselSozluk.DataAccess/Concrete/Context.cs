@@ -9,7 +9,7 @@ using YoreselSozluk.Entities;
 
 namespace YoreselSozluk.DataAccess.Concrete
 {
-    public class Context : DbContext, IContext
+    public class Context:DbContext,IContext
     {
         public Context(DbContextOptions<Context> options) : base(options) { }
 
