@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YoreselSozluk.Business.Models.RegionModels
+namespace YoreselSozluk.DataAccess.Models.RegionModels.CreateRegion
 {
     public class CreateRegionModel
     {

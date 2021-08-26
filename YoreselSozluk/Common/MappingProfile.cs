@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using YoreselSozluk.Business.Models.RegionModels;
+using YoreselSozluk.DataAccess.Models.RegionModels.CreateRegion;
 using YoreselSozluk.Entities;
 
 namespace YoreselSozluk.Common

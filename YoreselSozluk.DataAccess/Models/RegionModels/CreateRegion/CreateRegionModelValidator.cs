@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using YoreselSozluk.Business.Operations.RegionOperations.CreateRegion;
+using YoreselSozluk.DataAccess.Operations.RegionOperations.Commands.CreateRegion;
 
-namespace YoreselSozluk.Business.Models.RegionModels
+namespace YoreselSozluk.DataAccess.Models.RegionModels
 {
-    public class CreateRegionModelValidator:AbstractValidator<CreateRegionBLL>
+    public class CreateRegionModelValidator:AbstractValidator<CreateRegionCommand>
     {
         public CreateRegionModelValidator()
         {

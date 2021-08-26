@@ -6,9 +6,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using YoreselSozluk.Business.Models.RegionModels;
-using YoreselSozluk.Business.Operations.RegionOperations.CreateRegion;
 using YoreselSozluk.DataAccess.Abstract;
+using YoreselSozluk.DataAccess.Models.RegionModels;
+using YoreselSozluk.DataAccess.Models.RegionModels.CreateRegion;
+using YoreselSozluk.DataAccess.Operations.RegionOperations.Commands.CreateRegion;
 
 namespace YoreselSozluk.Controllers
 {
@@ -30,11 +31,11 @@ namespace YoreselSozluk.Controllers
         [HttpPost]
         public IActionResult CreateRegion(CreateRegionModel model)
         {
-            CreateRegionBLL regionBLL = new CreateRegionBLL(_context, _mapper);
-            regionBLL.Model = model;
+            CreateRegionCommand command = new CreateRegionCommand(_context, _mapper);
+            command.Model = model;
             CreateRegionModelValidator validationRules = new CreateRegionModelValidator();
-            validationRules.ValidateAndThrow(regionBLL);
-            regionBLL.Handle();
+            validationRules.ValidateAndThrow(command);
+            command.Handle();
             return Ok();
         }
 

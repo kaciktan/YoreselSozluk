@@ -15,6 +15,8 @@ using System.Reflection;
 using System.Threading.Tasks;
 using YoreselSozluk.DataAccess.Abstract;
 using YoreselSozluk.DataAccess.Concrete;
+using YoreselSozluk.Middlewares;
+using YoreselSozluk.Services;
 
 namespace YoreselSozluk
 {
@@ -41,6 +43,8 @@ namespace YoreselSozluk
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
+            services.AddSingleton<ILoggerService, ConsoleLogger>();
+
             services.AddScoped<IContext>(provider => provider.GetService<Context>());
         }
 
@@ -59,6 +63,8 @@ namespace YoreselSozluk
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCustomExeptionMiddleware();
 
             app.UseEndpoints(endpoints =>
             {
