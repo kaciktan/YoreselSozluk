@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using YoreselSozluk.DataAccess.Models.RegionModels.CreateRegion;
+using YoreselSozluk.DataAccess.Models.RegionModels.GetRegions;
 using YoreselSozluk.Entities;
 
 namespace YoreselSozluk.Common
@@ -13,6 +14,8 @@ namespace YoreselSozluk.Common
         public MappingProfile()
         {
             CreateMap<CreateRegionModel, Region>();
+            CreateMap<Region, RegionsViewModel>();
+
         }
     }
 }

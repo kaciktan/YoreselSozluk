@@ -6,9 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Concrete\" />
-    <Folder Include="Operations\RegionOperations\Commands\DeleteRegion\" />
-    <Folder Include="Operations\RegionOperations\Queries\" />
-    <Folder Include="Operations\RegionOperations\Commands\UpdateRegion\" />
+    <Folder Include="Operations\RegionOperations\Queries\GetRegionDetail\" />
   </ItemGroup>
 
   <ItemGroup>
