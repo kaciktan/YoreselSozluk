@@ -1,19 +1,18 @@
 ﻿using AutoMapper;
 using FluentValidation;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using YoreselSozluk.Common;
 using YoreselSozluk.DataAccess.Abstract;
 using YoreselSozluk.DataAccess.Models.RegionModels;
 using YoreselSozluk.DataAccess.Models.RegionModels.CreateRegion;
+using YoreselSozluk.DataAccess.Models.RegionModels.DeleteRegion;
 using YoreselSozluk.DataAccess.Models.RegionModels.GetRegions;
+using YoreselSozluk.DataAccess.Models.RegionModels.RegionDetail;
 using YoreselSozluk.DataAccess.Models.RegionModels.UpdateRegion;
 using YoreselSozluk.DataAccess.Operations.RegionOperations.Commands.CreateRegion;
+using YoreselSozluk.DataAccess.Operations.RegionOperations.Commands.DeleteRegion;
 using YoreselSozluk.DataAccess.Operations.RegionOperations.Commands.UpdateRegion;
+using YoreselSozluk.DataAccess.Operations.RegionOperations.Queries.GetRegionDetail;
 using YoreselSozluk.DataAccess.Operations.RegionOperations.Queries.GetRegions;
 
 namespace YoreselSozluk.Controllers
@@ -40,9 +39,13 @@ namespace YoreselSozluk.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetRegionDetail(int id)
+        public RegionDetailViewModel GetRegionDetail(int id)
         {
-            return Ok();
+            RegionDetailQuery query = new RegionDetailQuery(_context, _mapper);
+            query.RegionId = id;    
+            RegionDetailModelValidator validationRules = new RegionDetailModelValidator();
+            validationRules.ValidateAndThrow(query);
+            return query.Handle();
         }
 
 
@@ -74,10 +77,13 @@ namespace YoreselSozluk.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteRegion(int id)
         {
-
+            DeleteRegionCommand command = new DeleteRegionCommand(_context);
+            command.RegionId = id;
+            DeleteRegionValidator validationRules= new DeleteRegionValidator(); 
+            validationRules.ValidateAndThrow(command);
+            command.Handle();
             return Ok();
         }
-
 
     }
 }

@@ -19,10 +19,22 @@ namespace YoreselSozluk.UnitTest.TestSetup
                 new Region(){ Id=4, Name="Güney Doğu Anadolu"},
             };
 
+            List<City> cities = new List<City>()
+            {
+                new City(){ Id=1,RegionId=1,Name="Adana",Code="01"},
+                new City(){ Id=2,RegionId=1,Name="Mersin",Code="33"},
+    
+            };
+
 
             if (!context.Regions.Any())
             {
                context.Regions.AddRange(regions);
+            }
+
+            if (!context.Cities.Any())
+            {
+                context.Cities.AddRange(cities);
             }
 
 
