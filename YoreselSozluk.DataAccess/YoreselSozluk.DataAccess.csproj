@@ -6,6 +6,10 @@
 
   <ItemGroup>
     <Folder Include="Concrete\" />
+    <Folder Include="Operations\HeadingOperations\Commands\DeleteHeading\" />
+    <Folder Include="Operations\HeadingOperations\Commands\UpdateHeading\" />
+    <Folder Include="Operations\HeadingOperations\Queries\GetHeadings\" />
+    <Folder Include="Operations\HeadingOperations\Queries\GetHeadingDetail\" />
   </ItemGroup>
 
   <ItemGroup>
