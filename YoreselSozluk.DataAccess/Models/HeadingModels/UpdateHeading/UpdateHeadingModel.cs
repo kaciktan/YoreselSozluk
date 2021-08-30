@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YoreselSozluk.DataAccess.Models.HeadingModels.CreateHeading
+namespace YoreselSozluk.DataAccess.Models.HeadingModels.UpdateHeading
 {
-    public class CreateHeadingModel
+    public class UpdateHeadingModel
     {
         public int UserId { get; set; }
         public int CityId { get; set; }

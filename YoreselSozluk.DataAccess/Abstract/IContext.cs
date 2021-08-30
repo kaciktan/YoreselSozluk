@@ -14,6 +14,8 @@ namespace YoreselSozluk.DataAccess.Abstract
         public DbSet<City> Cities { get; set; }
         public DbSet<Entry> Entries { get; set; }
         public DbSet<Heading> Headings { get; set; }
+        public DbSet<User> Users { get; set; }
+
         int SaveChanges();
     }
 }
