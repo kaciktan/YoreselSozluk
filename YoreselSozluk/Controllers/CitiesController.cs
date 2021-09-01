@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -20,6 +21,7 @@ using YoreselSozluk.DataAccess.Operations.CityOperations.Queries.GetCityDetail;
 
 namespace YoreselSozluk.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CitiesController : ControllerBase

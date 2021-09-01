@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -21,6 +22,7 @@ using YoreselSozluk.DataAccess.Operations.HeadingOperations.Queries.GetHeadings;
 
 namespace YoreselSozluk.Controllers
 {
+    [Authorize]
     [Route("api/[controller]s")]
     [ApiController]
     public class HeadingController : ControllerBase

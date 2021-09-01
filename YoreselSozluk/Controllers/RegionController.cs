@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using YoreselSozluk.DataAccess.Abstract;
@@ -17,6 +18,7 @@ using YoreselSozluk.DataAccess.Operations.RegionOperations.Queries.GetRegions;
 
 namespace YoreselSozluk.Controllers
 {
+    [Authorize]
     [Route("api/[controller]s")]
     [ApiController]
     public class RegionController : ControllerBase
